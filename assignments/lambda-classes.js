@@ -1,6 +1,6 @@
 // CODE here for your Lambda Classes
 
-//Classes
+// CLASSES
 class person {
     constructor(attributes) {
         this.name = attributes.name;
@@ -20,7 +20,7 @@ class Instructor extends person {
         super(instructorAttributes);
         this.specialty = instructorAttributes.specialty,
         this.favLanguage = instructorAttributes.favLanguage,
-        this.catchPhrase = attr.catchPhrase;
+        this.catchPhrase = instructorAttributes.catchPhrase;
     }
 
  demo(string) {
@@ -54,7 +54,7 @@ class ProjectManagers extends Instructor{
     constructor(pmAttributes){
         super(pmAttributes);
         this.gradClassName = pmAttributes.gradClassName;
-        this.favInstructor = pmAttribues.favInstructor;
+        this.favInstructor = pmAttributes.favInstructor;
     }
     standUp(channel) {
         console.log(
@@ -68,13 +68,102 @@ class ProjectManagers extends Instructor{
     }
 }
 
-// Objects
+// OBJECTS
 // Person
-
-const chris = new person({
-    name: "Chris",
+const wilma = new person({
+    name: "Wilma",
     age: 32,
-    location: "London",
+    location: "Bedrock",
+    gender: "Female"
+});
+
+wilma.speak();
+
+const fred = new person ({
+    name: "Fred",
+    age: 37,
+    location: "Bedrock",
     gender: "Male"
 });
 
+fred.speak();
+
+//Instructor
+const jean = new Instructor({
+    name: "Jean",
+    age: 31,
+    location: "Paris",
+    gender: "Male",
+    specialty: "Front-end",
+    favLanguage: "HTML",
+    catchPhrase: "No pain, no gain!"
+});
+
+const jane = new Instructor({
+    name: "Jane",
+    age: 29,
+    location: "New York",
+    gender: "Female",
+    specialty: "Back-end",
+    favLanguage: "CSS",
+    catchPhrase: "Code along please!"
+});
+
+jean.demo("Javascript");
+jane.demo(wilma, "Advanced CSS");
+
+// Student
+const alex = new Student({
+    name: "Alex",
+    age: 32,
+    location: "Berlin",
+    previousBackground: "Finance",
+    className: "WEBEU4",
+    favSubjects: ["Javascript", "HTML", "CSS"]
+});
+
+const maryam = new Student({
+    name: "Maryam",
+    age: 31,
+    location: "Madrid",
+    gender: "Female",
+    previousBackground: "Healthcare",
+    className: "WEBEU4",
+    favSubjects: ["Javascript", "HTML", "CSS"]
+});
+
+alex.speak();
+alex.listsSubjects();
+maryam.PRAssignment("Javascript IV");
+maryam.sprintChallenge("JavaScript IV");
+
+// Project Managers
+const hasan = new ProjectManagers({
+    name: "Hasan",
+    age: 35,
+    location: "Oslo",
+    gender: "Male",
+    specialty: "UX Design",
+    favLanguage: "Ruby",
+    catchPhrase: "You win some, you lose some",
+    gradClassName: "WEBEU3",
+    favInstructor: "Jean"
+});
+
+const tara = new ProjectManagers({
+    name: "Tara",
+    age: 29,
+    location: removeEventListener,
+    gender: "Female",
+    specialty: "Data Science",
+    favLanguage: "Python",
+    catchPrhase: "Never give up!",
+    gradClassName: "WEBEU3",
+    favInstructor: "Jean"
+});
+
+hasan.speak();
+hasan.demo("User Interface and Git");
+tara.grade(alex, "Javascript IV");
+tara.standUp("WEBEU4-Chinedu");
+tara.debugsCode(maryam, "Responsive Design I");
